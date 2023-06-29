@@ -1,11 +1,10 @@
 export default class Currency {
-
   /**
    * constructor for the class Currency.
    * Note that the constructor used the setters to set the _code and _name attributes.
    */
   constructor(code, name) {
-    this.code = code; /* Setter method*/
+    this.code = code; /* Setter method */
     this.name = name; /* Setter method */
   }
 
