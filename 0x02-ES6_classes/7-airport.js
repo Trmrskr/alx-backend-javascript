@@ -20,6 +20,10 @@ export default class Airport {
     this._code = value;
   }
 
+  /**
+   * using the Symbol instance tostringTag to edit this
+   * class toString function
+   */
   get [Symbol.toStringTag]() {
     return this._code;
   }
