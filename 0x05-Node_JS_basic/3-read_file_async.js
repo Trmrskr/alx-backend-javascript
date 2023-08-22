@@ -1,22 +1,21 @@
 const fs = require('fs');
 
-
 const countStudents = (dataPath) => new Promise((resolve, reject) => {
   fs.readFile(dataPath, 'utf-8', (err, data) => {
     if (err) {
       reject(new Error('Cannot load the database'));
     }
     if (data) {
-      const fileLines = data
+      const lines = data
         .toString('utf-8')
         .trim()
         .split('\n');
       const studentGroups = {};
-      const dbFieldNames = fileLines[0].split(',');
-      const studentPropNames = dbFieldNames
-        .slice(0, dbFieldNames.length - 1);
+      const dbColumns = lines[0].split(',');
+      const studentPropNames = dbColumns
+        .slice(0, dbColumns.length - 1);
 
-      for (const line of fileLines.slice(1)) {
+      for (const line of lines.slice(1)) {
         const studentRecord = line.split(',');
         const studentPropValues = studentRecord
           .slice(0, studentRecord.length - 1);
