@@ -3,5 +3,5 @@
  * @param {string} message - The message to log.
  * @returns {void}
  */
-const displayMessage = (str_arg) => process.stdout.write(str_arg + '\n');
+const displayMessage = (str_arg) => console.log(str_arg);
 module.exports = displayMessage;
